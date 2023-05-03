@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <title>Social Finance Q&A</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="d-none" id="chart-container">
+        <div id="radar"></div>
+        <div id="bar"></div>
+        <div id="radarAlt" style="display: none"></div>
+        <div id="barAlt" style="display: none"></div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item active">
+          <div class="cat1 accordion-header">
+            <span class="accordion-icon active"></span>
+            <h2 class="cat-h">The Social Problem</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c1-0">
+              <h3>
+                1.To which extent have you identified the root cause(s) of the
+                social/environmental problem that you are trying to solve?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c1" value="4" />
+                <label class="radio-label" for="cat1-q1-c1">We're only starting to analyze this.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c2" value="2" />
+                <label class="radio-label" for="cat1-q1-c2">Not at all .</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c3" value="3" />
+                <label class="radio-label" for="cat1-q1-c3">Partially.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c4" value="1" />
+                <label class="radio-label" for="cat1-q1-c4">Almost.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c5" value="5" />
+                <label class="radio-label" for="cat1-q1-c5">Completely.</label>
+              </div>
+            </div>
+            <div class="question c1-1 d-none">
+              <h3>
+                2. Are you familiar with the concrete consequences of this
+                problem (i.e. cost) for your target group(s)?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c1" value="1" />
+                <label class="radio-label" for="cat1-q2-c1">I have just a vague idea.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c2" value="4" />
+                <label class="radio-label" for="cat1-q2-c2">We made a qualitative assessment of the current
+                  situation.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c3" value="2" />
+                <label class="radio-label" for="cat1-q2-c3">We made a quantitative analysis of the current situation
+                  plus a rough forecast of the future.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c4" value="3" />
+                <label class="radio-label" for="cat1-q2-c4">We prepared a detailed, quantitative analysis of present
+                  and future.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c5" value="5" />
+                <label class="radio-label" for="cat1-q2-c5">We completed a data set with future scenarios and
+                  probabilities.</label>
+              </div>
+            </div>
+            <div class="question c1-2 d-none" id="c1-q2">
+              <h3>
+                3. Have you identified the current gaps and deficits of
+                competing products and services for your target groups?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c1" value="2" />
+                <label class="radio-label" for="cat1-q3-c1">Not yet.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c2" value="1" />
+                <label class="radio-label" for="cat1-q3-c2">There is a qualitative assessment based on a few
+                  examples.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c3" value="5" />
+                <label class="radio-label" for="cat1-q3-c3">We made an analysis of major competitor's service
+                  shortfalls and excesses.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c4" value="4" />
+                <label class="radio-label" for="cat1-q3-c4">We prepared an analysis of average service shortfalls and
+                  excesses in the entire target market.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c5" value="3" />
+                <label class="radio-label" for="cat1-q3-c5">We completed an analysis of service shortfalls and excesses
+                  by each region in the target missing.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat2 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">The Solution</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c2-0 d-none">
+              <h3>
+                1. Does your solution offer a distinctive value add to your
+                target group(s)?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c1" value="1" />
+                <label class="radio-label" for="cat2-q1-c1">I don't know.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c2" value="5" />
+                <label class="radio-label" for="cat2-q1-c2">We haven't finished the competitive analysis yet.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c3" value="2" />
+                <label class="radio-label" for="cat2-q1-c3">Yes, we gathered examples of our competitive edge.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c4" value="4" />
+                <label class="radio-label" for="cat2-q1-c4">Yes, we analyzed the entire market and are sure to offer a
+                  clear value add.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c5" value="3" />
+                <label class="radio-label" for="cat2-q1-c5">We completed the competitive analysis and found that we
+                  have a concrete value add for each target group.</label>
+              </div>
+            </div>
+            <div class="question c2-1 d-none">
+              <h3>
+                2. How far have you come in describing the impact goal of your
+                enterprise?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c1" value="1" />
+                <label class="radio-label" for="cat2-q2-c1">We just started with it.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c2" value="3" />
+                <label class="radio-label" for="cat2-q2-c2">We built an initial Theory of Change.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c3" value="5" />
+                <label class="radio-label" for="cat2-q2-c3">We described the impact on each target group
+                  qualitatively.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c4" value="4" />
+                <label class="radio-label" for="cat2-q2-c4">We defined a clear impact chain along the entire product
+                  and service delivery process, including examples.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c5" value="2" />
+                <label class="radio-label" for="cat2-q2-c5">We set up the entire logframe with input, activities,
+                  output and outcomes for each step in the process, including
+                  a complete documentation of examples.</label>
+              </div>
+            </div>
+            <div class="question c2-2 d-none" id="c2-q1">
+              <h3>
+                3. ) Are you in a position to measure the impact and thus
+                control the quality of your products/services?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c1" value="1" />
+                <label class="radio-label" for="cat2-q3-c1">No, why should we?</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c2" value="4" />
+                <label class="radio-label" for="cat2-q3-c2">Not yet, but we're working on defining impact
+                  indicators.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c3" value="5" />
+                <label class="radio-label" for="cat2-q3-c3">Yes, our indicators for impact measurement are defined, but
+                  the necessary data are not sufficiently available.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c4" value="2" />
+                <label class="radio-label" for="cat2-q3-c4">Yes, the data for all indicators are available, but the
+                  data collection process still needs too much time and
+                  effort.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c5" value="3" />
+                <label class="radio-label" for="cat2-q3-c5">Yes, all data for our impact indicators are available
+                  within the necessary time frame.</label>
+              </div>
+            </div>
+            <div class="question c2-3 d-none" id="c2-q3">
+              <h3>
+                4. Did you run pilots for your offering that are sufficiently
+                documented?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q4" class="cat-c" id="cat2-q4-c1" value="3" />
+                <label class="radio-label" for="cat2-q4-c1">No, not yet.</label>
+                <input type="radio" name="cat2-q4" class="cat-c" id="cat2-q4-c2" value="2" />
+                <label class="radio-label" for="cat2-q4-c2">We're in the middle of a pilot.</label>
+                <input type="radio" name="cat2-q4" class="cat-c" id="cat2-q4-c3" value="5" />
+                <label class="radio-label" for="cat2-q4-c3">Yes, but we're currently analyzing the pilot(s).</label>
+                <input type="radio" name="cat2-q4" class="cat-c" id="cat2-q4-c4" value="4" />
+                <label class="radio-label" for="cat2-q4-c4">Yes, the pilots are complete with documentation of actual
+                  achievements versus plan, but we have to define the
+                  implications on our business model yet.</label>
+                <input type="radio" name="cat2-q4" class="cat-c" id="cat2-q4-c5" value="1" />
+                <label class="radio-label" for="cat2-q4-c5">Yes, the pilots are complete and we have adjusted our
+                  business model based on their results.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat3 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">The Distribution</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c3-0 d-none">
+              <h3>
+                1. Are your distribution channels clearly defined and
+                manageable?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c1" value="1" />
+                <label class="radio-label" for="cat3-q1-c1">No, not at all.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c2" value="2" />
+                <label class="radio-label" for="cat3-q1-c2">They are not entirely defined.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c3" value="3" />
+                <label class="radio-label" for="cat3-q1-c3">We defined means and channels to distribute products and
+                  services, but the respective processes and control
+                  mechanisms are missing yet.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c4" value="4" />
+                <label class="radio-label" for="cat3-q1-c4">We defined our distribution channels and supported it with
+                  process and service/product descriptions.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c5" value="5" />
+                <label class="radio-label" for="cat3-q1-c5">We described the entire distribution process in detail,
+                  including marketing, customer acquisition and control
+                  mechanisms.</label>
+              </div>
+            </div>
+            <div class="question c3-1 d-none" id="c3-q1">
+              <h3>2. Is your organizational structure efficient?</h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c1" value="2" />
+                <label class="radio-label" for="cat3-q2-c1">No, currently there's no common ground in the team about
+                  our processes.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c2" value="1" />
+                <label class="radio-label" for="cat3-q2-c2">Our internal processes and the ad hoc solutions still
+                  absorb a lot of time.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c3" value="3" />
+                <label class="radio-label" for="cat3-q2-c3">Yes, our core activities and support processes are in
+                  place, but our standards still evolve.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c4" value="5" />
+                <label class="radio-label" for="cat3-q2-c4">We have defined common standards and our internal workflow
+                  is efficient.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c5" value="4" />
+                <label class="radio-label" for="cat3-q2-c5">Our internal processes are clearly defined, integrated and
+                  understood by the entire team so we can focus on our
+                  customers.</label>
+              </div>
+            </div>
+            <div class="question c3-2 d-none">
+              <h3>
+                3. Is your team sufficiently skilled to meet the requirements?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c1" value="1" />
+                <label class="radio-label" for="cat3-q3-c1">No.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c2" value="5" />
+                <label class="radio-label" for="cat3-q3-c2">No, but we're working on it.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c3" value="3" />
+                <label class="radio-label" for="cat3-q3-c3">Partially; we have made a qualitative assessment of the
+                  gaps, and the management is able to compensate for it to
+                  some extent.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c4" value="4" />
+                <label class="radio-label" for="cat3-q3-c4">Mostly; we made a structured analysis and are able to fill
+                  most of the gaps and secure the additional talent(s).</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c5" value="2" />
+                <label class="radio-label" for="cat3-q3-c5">Our structured analysis of skills and requirements is
+                  complete and our team has all the relevant industry and
+                  product experience to fill all gaps.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat4 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Growth & Scaling</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c4-0 d-none">
+              <h3>1. Is your organization fit for scaling?</h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c1" value="3" />
+                <label class="radio-label" for="cat4-q1-c1">No, not really.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c2" value="2" />
+                <label class="radio-label" for="cat4-q1-c2">This is not our focus now.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c3" value="1" />
+                <label class="radio-label" for="cat4-q1-c3">We started to prepare our organization for scale, but our
+                  internal structures are still tailored to our current
+                  size.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c4" value="4" />
+                <label class="radio-label" for="cat4-q1-c4">We're getting there: our processes are standardized,
+                  central functions are poised for scale and workflows are
+                  defined.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c5" value="5" />
+                <label class="radio-label" for="cat4-q1-c5">We're fully prepared for scaling: all functions, systems
+                  and divisions are in place for our next stage .</label>
+              </div>
+            </div>
+            <div class="question c4-1 d-none" id="c4-q1">
+              <h3>2. Did you define a growth plan for your offering?</h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c1" value="3" />
+                <label class="radio-label" for="cat4-q2-c1">Not yet.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c2" value="2" />
+                <label class="radio-label" for="cat4-q2-c2">We have a vision but without details or facts yet.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c3" value="1" />
+                <label class="radio-label" for="cat4-q2-c3">We made draft plan for expanding products/services to new
+                  target groups and regions.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c4" value="5" />
+                <label class="radio-label" for="cat4-q2-c4">We have a clear plan for expansion, incuding estimates of
+                  necessary resources based on different scenarios.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c5" value="4" />
+                <label class="radio-label" for="cat4-q2-c5">We completed a detailed expansion plan with calculations of
+                  resources in each scenario as well as a timeline and short-
+                  to mid-term goals.</label>
+              </div>
+            </div>
+            <div class="question c4-2 d-none">
+              <h3>
+                3. Have you prepared a cash flow analysis for your expansion
+                plan?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c1" value="1" />
+                <label class="radio-label" for="cat4-q3-c1">No, we didn't have time for this yet.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c2" value="2" />
+                <label class="radio-label" for="cat4-q3-c2">We're in the process of doing so.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c3" value="3" />
+                <label class="radio-label" for="cat4-q3-c3">We defined prices, income and costs, but we're missing some
+                  data yet.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c4" value="4" />
+                <label class="radio-label" for="cat4-q3-c4">All cashflows are calculated, but there are some additional
+                  regions/target groups/channels to be checked.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c5" value="5" />
+                <label class="radio-label" for="cat4-q3-c5">Mission completed: all cashflows are planned in
+                  detail</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat5 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Financing & Forecasts</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c5-0 d-none">
+              <h3>
+                1. Have you clearly linked all of your income and costs with
+                your activities?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c1" value="1" />
+                <label class="radio-label" for="cat5-q1-c1">No, why should I?.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c2" value="3" />
+                <label class="radio-label" for="cat5-q1-c2">No, this is still work in progress.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c3" value="4" />
+                <label class="radio-label" for="cat5-q1-c3">Partially; approximately 50% of these cashflows have been
+                  linked to our activities.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c4" value="2" />
+                <label class="radio-label" for="cat5-q1-c4">Mostly; we're at about 75% completion.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c5" value="5" />
+                <label class="radio-label" for="cat5-q1-c5">Yes, completely. We identified all drivers of income and
+                  costs and are able to extrapolate our cashflows based on our
+                  activities and different scenarios.</label>
+              </div>
+            </div>
+            <div class="question c5-1 d-none" id="c5-q1">
+              <h3>
+                2. Does your financial model sufficiently explain the link
+                between growth and capital needs?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c1" value="1" />
+                <label class="radio-label" for="cat5-q2-c1">No, we haven't considered this yet</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c2" value="2" />
+                <label class="radio-label" for="cat5-q2-c2">It's more or less based on our experiences.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c3" value="3" />
+                <label class="radio-label" for="cat5-q2-c3">Mostly; the need for resources was not completely linked to
+                  its drivers so far.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c4" value="4" />
+                <label class="radio-label" for="cat5-q2-c4">Yes, we've identified all the drivers for resources and
+                  capital requirements, but need to support it with facts and
+                  scenarios yet.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c5" value="5" />
+                <label class="radio-label" for="cat5-q2-c5">The financial model is 100% complete and supported by
+                  different scenarios, data and/or management
+                  assessments</label>
+              </div>
+            </div>
+            <div class="question c5-2 d-none">
+              <h3>
+                3. Did you define measurable key performance indicators (KPI)
+                for success and failure?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c1" value="1" />
+                <label class="radio-label" for="cat5-q3-c1">No, what is this?</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c2" value="2" />
+                <label class="radio-label" for="cat5-q3-c2">We're in the process of doing so.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c3" value="3" />
+                <label class="radio-label" for="cat5-q3-c3">Partially, but our data are not sufficient yet.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c4" value="4" />
+                <label class="radio-label" for="cat5-q3-c4">Yes, we have a solid data set and measurement, but need to
+                  define adjustment processes for deviations between actual
+                  and plan.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c5" value="5" />
+                <label class="radio-label" for="cat5-q3-c5">This is all set and done: KPI measurement and processes are
+                  firmly in place.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="scroll"></div> -->
+      <button type="button" class="submit disabled" id="submit">
+        Submit
+      </button>
+    </div>
+    <div id="download-btn">
+      <button id="reset" style="display: none">Reset Form</button>
+      <button id="download" style="display: none">Download</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js" defer></script>
+  <!-- html-to-pdfmake file: -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js" defer></script>
+</body>
+
+</html>
