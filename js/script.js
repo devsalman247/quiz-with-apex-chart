@@ -398,7 +398,7 @@ document.getElementById("download").addEventListener("click", function downloadP
 			heading.style.maxWidth = "750px";
 		});
 
-		chartsDiv.prepend(radar, bar);
+		chartsDiv.prepend(radar.cloneNode(true), bar.cloneNode(true));
 		const parent5 = document.querySelector(".question.c5-0").parentElement.parentElement;
 		const parent4 = document.querySelector(".question.c4-0").parentElement.parentElement;
 		const parent3 = document.querySelector(".question.c3-0").parentElement.parentElement;
@@ -411,7 +411,16 @@ document.getElementById("download").addEventListener("click", function downloadP
 		accordionHeaders.forEach((header) => {
 			header.classList.add("accordion-header-pdf");
 		});
-		newDiv.prepend(header, chartsDiv, details, parent1, parent2, parent3, parent4, parent5);
+		newDiv.prepend(
+			header,
+			chartsDiv,
+			details,
+			parent1.cloneNode(true),
+			parent2.cloneNode(true),
+			parent3.cloneNode(true),
+			parent4.cloneNode(true),
+			parent5.cloneNode(true)
+		);
 
 		const element = document.getElementById("calPDF");
 		html2pdf()
@@ -426,12 +435,17 @@ document.getElementById("download").addEventListener("click", function downloadP
 			})
 			.save()
 			.then(() => {
+				element.remove();
+				document.getElementById("radarAlt").style.display = "none";
+				document.getElementById("barAlt").style.display = "none";
 				document.getElementById("radar").style.display = "block";
 				document.getElementById("bar").style.display = "block";
 			});
 	}, 2000);
 });
 document.getElementById("reset").addEventListener("click", function resetForm() {
+	if (!document.getElementById("submit").classList.contains("disabled"))
+		document.getElementById("submit").classList.add("disabled");
 	document.getElementById("download").style.display = "none";
 	document.getElementById("reset").style.display = "none";
 	document.getElementById("radar").style.display = "none";
@@ -463,7 +477,9 @@ document.getElementById("reset").addEventListener("click", function resetForm() 
 			}
 		} else {
 			document.querySelector(".accordion-icon").classList.toggle("active");
-			element.classList.toggle("active");
+			if (!element.classList.contains("active")) {
+				element.classList.toggle("active");
+			}
 		}
 	});
 
@@ -475,6 +491,11 @@ document.getElementById("reset").addEventListener("click", function resetForm() 
 				question.classList.toggle("d-none");
 			}
 		}
+	});
+
+	const checkedLabels = document.querySelectorAll(".checked-label");
+	Array.from(checkedLabels).forEach((label) => {
+		label.classList.remove("checked-label");
 	});
 
 	const icons = document.getElementsByClassName("accordion-icon");
