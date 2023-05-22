@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <title>Social Finance Q&A</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="d-none" id="chart-container">
+        <div id="radar"></div>
+        <div id="bar"></div>
+        <div id="radarAlt" style="display: none"></div>
+        <div id="barAlt" style="display: none"></div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item active">
+          <div class="cat1 accordion-header">
+            <span class="accordion-icon active"></span>
+            <h2 class="cat-h">Blended Finance Purpose</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c1-0">
+              <h3>1. What is the main goal of Blended Finance?</h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c1" value="1" />
+                <label class="radio-label" for="cat1-q1-c1">I heard about Blended Finance, but don't know exactly what
+                  it aims at.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c2" value="3" />
+                <label class="radio-label" for="cat1-q1-c2">It blends and leverages public resources with private sector
+                  engagement.
+                </label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c3" value="2" />
+                <label class="radio-label" for="cat1-q1-c3">It helps development agencies and foundations to finance the
+                  SDGs.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c4" value="5" />
+                <label class="radio-label" for="cat1-q1-c4">It's a strategic approach to use development finance and
+                  philanthropic funds to mobilize private capital flows to
+                  emerging and frontier markets.
+                </label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c5" value="4" />
+                <label class="radio-label" for="cat1-q1-c5">It enables development finance and philanthropic funds to
+                  mobilize private capital.</label>
+              </div>
+            </div>
+            <div class="question c1-1 d-none" id="c1-q1">
+              <h3>
+                2. How does Blended Finance differentiate from Impact
+                Investing and Commercial Investing?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c1" value="1" />
+                <label class="radio-label" for="cat1-q2-c1">I have no idea.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c2" value="5" />
+                <label class="radio-label" for="cat1-q2-c2">Blended Finance, Impact Investing and Commercial Investing
+                  are three different approaches that have distinct
+                  characteristics but also have overlaps in tackling specific development impact challenges.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c3" value="3" />
+                <label class="radio-label" for="cat1-q2-c3">Blended Finance and Impact Investing are two different
+                  investment approaches to fostering impact.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c4" value="4" />
+                <label class="radio-label" for="cat1-q2-c4">Blended Finance is a structuring approach that may include
+                  Impact Investments.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c5" value="2" />
+                <label class="radio-label" for="cat1-q2-c5">It's essentially the same.</label>
+              </div>
+            </div>
+            <div class="question c1-2 d-none">
+              <h3>
+                3. What are the key characteristics of a Blended Finance
+                transaction?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c1" value="2" />
+                <label class="radio-label" for="cat1-q3-c1">It provides a high leverage ratio of private capital on each
+                  public and/or philanthropic dollar.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c2" value="3" />
+                <label class="radio-label" for="cat1-q3-c2">It is additional, i.e. it crowds in private sector
+                  investment which wouldn't have been attracted otherwise.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c3" value="1" />
+                <label class="radio-label" for="cat1-q3-c3">It's (a) blended, (b) financial and (c) big
+                  transaction.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c4" value="5" />
+                <label class="radio-label" for="cat1-q3-c4">There are three key characteristics of every Blended Finance
+                  transaction: positive additionality, positive impact and
+                  positive financial return.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c5" value="4" />
+                <label class="radio-label" for="cat1-q3-c5">It creates additionality to the project by effectively
+                  crowding in private capital while positively contributing to the
+                  SDGs.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat2 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Blended Finance Actors</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c2-0 d-none">
+              <h3>
+                1. Who are the primary actors involved in Blended Finance
+                transactions?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c1" value="2" />
+                <label class="radio-label" for="cat2-q1-c1">All investors who aim to support the SDGs.
+                </label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c2" value="4" />
+                <label class="radio-label" for="cat2-q1-c2">Providers of development finance and philanthropic funds,
+                  impact investors and commercial investors aiming to engage in
+                  emerging and frontier markets.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c3" value="1" />
+                <label class="radio-label" for="cat2-q1-c3">Everyone who wants to provide capital.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c4" value="5" />
+                <label class="radio-label" for="cat2-q1-c4">Private, philanthropic and public providers of capital plus
+                  the organizations and enterprises on the ground receiving
+                  the capital to implement the development impact project.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c5" value="3" />
+                <label class="radio-label" for="cat2-q1-c5">Capital providers from the public and the private
+                  sector.</label>
+              </div>
+            </div>
+            <div class="question c2-1 d-none" id="c2-q1">
+              <h3>
+                2. What is THE essential Blended Finance feature that triggers
+                more private capital flow to developing countries?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c1" value="2" />
+                <label class="radio-label" for="cat2-q2-c1">Providing knowledge to private sector investors.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c2" value="3" />
+                <label class="radio-label" for="cat2-q2-c2">Making transactions bigger so they are more
+                  efficient.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c3" value="1" />
+                <label class="radio-label" for="cat2-q2-c3">Making local financial markets function efficiently.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c4" value="5" />
+                <label class="radio-label" for="cat2-q2-c4">Improving the risk-return profile of transactions for
+                  private sector capital providers.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c5" value="4" />
+                <label class="radio-label" for="cat2-q2-c5">Mitigating the risks of transactions for private sector
+                  investors.</label>
+              </div>
+            </div>
+            <div class="question c2-2 d-none">
+              <h3>
+                3. How do the motives of public, philanthropic and private
+                sector funders differ?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c1" value="1" />
+                <label class="radio-label" for="cat2-q3-c1">I don't know exactly, probably in terms of return
+                  expectations.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c2" value="5" />
+                <label class="radio-label" for="cat2-q3-c2">Public and philanthropic actors strive to achieve more
+                  effective and lasting impact with their funding, while private
+                  sector capital providers need to aim either for a pre-defined financial return for a given (or
+                  perceived) risk, or less
+                  risk for a given expected return.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c3" value="3" />
+                <label class="radio-label" for="cat2-q3-c3">Private sector investors want to reduce their risks.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c4" value="4" />
+                <label class="radio-label" for="cat2-q3-c4">Public and philanthropic funders want to achieve more impact
+                  for every dollar provided.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c5" value="2" />
+                <label class="radio-label" for="cat2-q3-c5">They dont't differ, all funders are perfectly aligned in
+                  their motives.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat3 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Blended Finance Instruments</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c3-0 d-none">
+              <h3>
+                1. What are the main types of Blended Finance solutions?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c1" value="2" />
+                <label class="radio-label" for="cat3-q1-c1">Standard grants and guarantees.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c2" value="1" />
+                <label class="radio-label" for="cat3-q1-c2">Only standard grants.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c3" value="3" />
+                <label class="radio-label" for="cat3-q1-c3">Catalytic capital in the form of "smart" guarantees and
+                  grants, e.g. redeemable grants.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c4" value="5" />
+                <label class="radio-label" for="cat3-q1-c4">There are many ways for grants, guarantees and concessional
+                  capital to add value and catalyze. The main types are (1)
+                  structured & layered funds, (2) pay-for-results & market incentives, as well as (3) guarantees &
+                  insurances for
+                  risk-underwriting. On top come support for ecosystem-building or design & preparation of a project
+                  (e.g. Technical
+                  Assistance, Investment Readiness).</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c5" value="4" />
+                <label class="radio-label" for="cat3-q1-c5">Structured & layered funds as well as pay-for-results &
+                  incentive solutions, e.g. Development Impact Bonds.</label>
+              </div>
+            </div>
+            <div class="question c3-1 d-none" id="c3-q1">
+              <h3>
+                2. What is the core function of concessional capital in
+                Blended Finance?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c1" value="1" />
+                <label class="radio-label" for="cat3-q2-c1">I don't know.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c2" value="3" />
+                <label class="radio-label" for="cat3-q2-c2">Concessional debt or equity provide favorable terms relative
+                  to market pricing.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c3" value="4" />
+                <label class="radio-label" for="cat3-q2-c3">It can protect other more conservative "senior" investors by
+                  taking first losses.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c4" value="2" />
+                <label class="radio-label" for="cat3-q2-c4">As the name says: it's cheap!</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c5" value="5" />
+                <label class="radio-label" for="cat3-q2-c5">There are several value adds, but the most important for
+                  Blended Finance are (a) a better risk-return ratio for private
+                  sector investors and (b) less cost of capital for the transaction.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat4 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Blended Finance Obstacle</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c4-0 d-none">
+              <h3>
+                1. What is the biggest obstacle to increasing Blended Finance
+                activities?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c1" value="1" />
+                <label class="radio-label" for="cat4-q1-c1">I have no idea.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c2" value="4" />
+                <label class="radio-label" for="cat4-q1-c2">Shaping successful Blended Finance transactions and creating
+                  best practice examples.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c3" value="3" />
+                <label class="radio-label" for="cat4-q1-c3">Getting the public and philanthropic actors moving towards
+                  more innovative solutions.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c4" value="5" />
+                <label class="radio-label" for="cat4-q1-c4">Understanding the different mindsets of public,
+                  philanthropic and private sector funders and overcoming mentality gaps
+                  to enable effective collaboration.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c5" value="2" />
+                <label class="radio-label" for="cat4-q1-c5">There is none: it's only in our heads.</label>
+              </div>
+            </div>
+            <div class="question c4-1 d-none" id="c4-q1">
+              <h3>2. When NOT to use Blended Finance?</h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c1" value="4" />
+                <label class="radio-label" for="cat4-q2-c1">When the project/solution doesn't provide additionality
+                  and/or isn't ready to take on investment.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c2" value="2" />
+                <label class="radio-label" for="cat4-q2-c2">When it's too complicated.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c3" value="3" />
+                <label class="radio-label" for="cat4-q2-c3">When it's too expensive.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c4" value="5" />
+                <label class="radio-label" for="cat4-q2-c4">When the project or solution doesn't have a market-based
+                  model, isn't scalable, lacks additionality and doesn't provide
+                  evidence about its ability to create the intended impact as well as about the potential to become
+                  self-sustaining.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c5" value="1" />
+                <label class="radio-label" for="cat4-q2-c5">It's ALWAYS useful!</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat5 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Blended Finance in Practice</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c5-0 d-none">
+              <h3>
+                1. How many Blended Finance Deals do you think have been
+                closed worldwide to date?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c1" value="2" />
+                <label class="radio-label" for="cat5-q1-c1">It depends on who you ask.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c2" value="1" />
+                <label class="radio-label" for="cat5-q1-c2">I don't know, maybe 20?</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c3" value="4" />
+                <label class="radio-label" for="cat5-q1-c3">Around 500.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c4" value="3" />
+                <label class="radio-label" for="cat5-q1-c4">Less than 100.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c5" value="5" />
+                <label class="radio-label" for="cat5-q1-c5">More than 750.</label>
+              </div>
+            </div>
+            <div class="question c5-1 d-none">
+              <h3>
+                2. What would you say is the typical deal size of a Blended
+                Finance transaction?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c1" value="5" />
+                <label class="radio-label" for="cat5-q2-c1">There is a huge range, but typically the median is around 65
+                  million.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c2" value="3" />
+                <label class="radio-label" for="cat5-q2-c2">More than US$ 100 million.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c3" value="1" />
+                <label class="radio-label" for="cat5-q2-c3">I have no idea.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c4" value="2" />
+                <label class="radio-label" for="cat5-q2-c4">Less than US$ 10 million.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c5" value="4" />
+                <label class="radio-label" for="cat5-q2-c5">Somewhere between US$ 100,000 to 8 billion.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="scroll"></div> -->
+      <button type="button" class="submit disabled" id="submit">
+        Submit
+      </button>
+    </div>
+    <div id="download-btn">
+      <button id="reset" style="display: none">Reset Form</button>
+      <button id="download" style="display: none">Download</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js" defer></script>
+  <!-- html-to-pdfmake file: -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js" defer></script>
+</body>
+
+</html>

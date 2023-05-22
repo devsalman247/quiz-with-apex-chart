@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <title>Social Finance Q&A</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="d-none" id="chart-container">
+        <div id="radar"></div>
+        <div id="bar"></div>
+        <div id="radarAlt" style="display: none"></div>
+        <div id="barAlt" style="display: none"></div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item active">
+          <div class="cat1 accordion-header">
+            <span class="accordion-icon active"></span>
+            <h2 class="cat-h">Investor Relations</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c1-0">
+              <h3>
+                1. Did you define a strategy how to build good relations with
+                your investors?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c1" value="3" />
+                <label class="radio-label" for="cat1-q1-c1">We are currently discussing and drafting an investor
+                  relations strategy within our team.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c2" value="1" />
+                <label class="radio-label" for="cat1-q1-c2">No, I will think about this later.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c3" value="4" />
+                <label class="radio-label" for="cat1-q1-c3">We're almost there and are now finalizing suitable investor
+                  relations tools and processes.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c4" value="2" />
+                <label class="radio-label" for="cat1-q1-c4">I am aware that this is an important issue and have begun to
+                  inform myself about the options that we have.</label>
+                <input type="radio" name="cat1-q1" class="cat-c" id="cat1-q1-c5" value="5" />
+                <label class="radio-label" for="cat1-q1-c5">Yes, our investor relations strategy is complete with all
+                  necessary tools, processes, timetables and responsibilities.</label>
+              </div>
+            </div>
+            <div class="question c1-1 d-none" id="c1-q1">
+              <h3>
+                2. Are you sufficiently familiar with the individual
+                information needs of each of your investors?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c1" value="2" />
+                <label class="radio-label" for="cat1-q2-c1">I have some ideas, but need to speak with each investor
+                  first to better understand what they need.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c2" value="5" />
+                <label class="radio-label" for="cat1-q2-c2">Absolutely. We are completely prepared to answer all ongoing
+                  information and meeting requests and to enter into a
+                  beneficial and reliable communication.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c3" value="1" />
+                <label class="radio-label" for="cat1-q2-c3">No, everyone will simply get the same information and
+                  attention.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c4" value="3" />
+                <label class="radio-label" for="cat1-q2-c4">Partially. Me and my team spoke with most of our investors
+                  but we need to address the others yet before defining the
+                  right approach.</label>
+                <input type="radio" name="cat1-q2" class="cat-c" id="cat1-q2-c5" value="4" />
+                <label class="radio-label" for="cat1-q2-c5">Yes, we checked this issue with all of our investors and are
+                  now defining how to best deal with various information
+                  needs.</label>
+              </div>
+            </div>
+            <div class="question c1-2 d-none">
+              <h3>
+                3. Do you know how to make best use of the value add that your
+                investors can offer to your enterprise?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c1" value="4" />
+                <label class="radio-label" for="cat1-q3-c1">Sure, this is exactly why we chose these investors. We are
+                  happy to actively seek and receive industry expertise and
+                  strategic insights, introductions to potential partners and customers and other kinds of valuable
+                  support.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c2" value="2" />
+                <label class="radio-label" for="cat1-q3-c2">There are a few issues that I already thought about
+                  discussing with some of them.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c3" value="1" />
+                <label class="radio-label" for="cat1-q3-c3">No, I'm quite happy that I have the money and can focus on
+                  my work now.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c4" value="3" />
+                <label class="radio-label" for="cat1-q3-c4">Yes, I'm certainly interested in exchanging ideas and
+                  strategic options with (some of) them on a regular basis.</label>
+                <input type="radio" name="cat1-q3" class="cat-c" id="cat1-q3-c5" value="5" />
+                <label class="radio-label" for="cat1-q3-c5">Yes, we already receive this kind of support and know
+                  exactly which on-financial value each of our investors is willing
+                  and able to contribute.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat2 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Monitoring and Report</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c2-0 d-none" id="c2-q0">
+              <h3>
+                1. To which extent do you monitor the impact that your
+                enterprise achieves?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c1" value="1" />
+                <label class="radio-label" for="cat2-q1-c1">Not at all. Currently, we have no impact monitoring or
+                  reporting system in place, but we collect some data
+                  sporadically.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c2" value="3" />
+                <label class="radio-label" for="cat2-q1-c2">Somewhat. We track several impact-related metrics and use
+                  them when we are fundraising.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c3" value="4" />
+                <label class="radio-label" for="cat2-q1-c3">We have established a system for measuring and managing our
+                  impact and also produce an annual impact report.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c4" value="2" />
+                <label class="radio-label" for="cat2-q1-c4">We have defined a basic concept for measuring and monitoring
+                  our impact but we do not systematically collect data or
+                  report them to investors yet.</label>
+                <input type="radio" name="cat2-q1" class="cat-c" id="cat2-q1-c5" value="5" />
+                <label class="radio-label" for="cat2-q1-c5">Fully. Out IMM system is installed and impact metrics are
+                  tracked continuously. We use them in the day-to-day management
+                  to improve our product/service and also report them annually to our investors and other
+                  stakeholders.</label>
+              </div>
+            </div>
+            <div class="question c2-1 d-none">
+              <h3>2.How evolved is your financial modeling?</h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c1" value="1" />
+                <label class="radio-label" for="cat2-q2-c1">What is this exactly?.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c2" value="3" />
+                <label class="radio-label" for="cat2-q2-c2">Before raising investment, we already prepared our income
+                  statement, balance sheet, and cash flow statement, but our
+                  forecast capabilities are not yet evolved enough for the stage we're in.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c3" value="5" />
+                <label class="radio-label" for="cat2-q2-c3">Our financial model is up-to-date and complete. We can show
+                  our forecast to our team and investors anytime and discuss
+                  potential scenarios and sensitivities with them.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c4" value="2" />
+                <label class="radio-label" for="cat2-q2-c4">We just hired a finance expert who will set this up
+                  professionally.</label>
+                <input type="radio" name="cat2-q2" class="cat-c" id="cat2-q2-c5" value="4" />
+                <label class="radio-label" for="cat2-q2-c5">To a large extent. Our financial model is fleshed out and we
+                  are able to perform a sensitivity analysis for various
+                  scenarios and assumptions. But as our recent growth is strong (and we launched more products or
+                  regions), we need to
+                  update it.</label>
+              </div>
+            </div>
+            <div class="question c2-2 d-none" id="c2-q2">
+              <h3>
+                3. Have you installed an integrated management information
+                system (MIS) to help you guide your enterprise?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c1" value="3" />
+                <label class="radio-label" for="cat2-q3-c1">We have installed something that's easier and less expensive
+                  to at least support the management's decision-making with
+                  our current limited resources.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c2" value="1" />
+                <label class="radio-label" for="cat2-q3-c2">No, what is this MIS all about?</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c3" value="2" />
+                <label class="radio-label" for="cat2-q3-c3">We have started to look into this to prepare for the next
+                  stage of growth.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c4" value="5" />
+                <label class="radio-label" for="cat2-q3-c4">Absolutely. We have installed a comprehensive MIS that
+                  includes all major elements such as customer relationship
+                  management, supply chain management, and enterprise resource planning, which allows us to manage the
+                  enterprise and
+                  monitor our performance efficiently.</label>
+                <input type="radio" name="cat2-q3" class="cat-c" id="cat2-q3-c5" value="4" />
+                <label class="radio-label" for="cat2-q3-c5">Yes. We have decided to make the investment into an MIS and
+                  started to integrate it with our existing systems as well as
+                  train our employees.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat3 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Mission Preservation</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c3-0 d-none">
+              <h3>
+                1. How deep is your understanding of how much you, your team
+                and your investors are really aligned in terms of your
+                enterprise's mission?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c1" value="2" />
+                <label class="radio-label" for="cat3-q1-c1">I have the impression we're all on the same
+                  wavelength.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c2" value="1" />
+                <label class="radio-label" for="cat3-q1-c2">I don't know. Time will tell.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c3" value="4" />
+                <label class="radio-label" for="cat3-q1-c3">Our team is aligned and we're on track mission-wise, but
+                  there is tension with some investor(s) about strategic options
+                  and which ones we should choose going ahead.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c4" value="3" />
+                <label class="radio-label" for="cat3-q1-c4">There is tension sometimes, but we have regular discussions
+                  in the team to make sure that we still share the same goals
+                  and continue to move towards our shared mission.</label>
+                <input type="radio" name="cat3-q1" class="cat-c" id="cat3-q1-c5" value="5" />
+                <label class="radio-label" for="cat3-q1-c5">We continue to be fully mission-aligned as a team, which we
+                  regularly discuss and check. We are also up-to-date on the
+                  priorities of our investors and so far always reached good alignment due to the excellent
+                  communication we have
+                  established with them. We also took precautions before signing the last financing round by aligning
+                  with our investors
+                  on essential issues such as preferred exit scenarios and growth strategies.</label>
+              </div>
+            </div>
+            <div class="question c3-1 d-none" id="c3-q1">
+              <h3>
+                2. Did you take precautions for a potential mission drift
+                before you chose your investors?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c1" value="4" />
+                <label class="radio-label" for="cat3-q2-c1">Yes, we informed ourselves about suitable governance
+                  mechanisms, integrated some of them, and made sure to have several
+                  investors aboard to avoid being too financially dependent.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c2" value="1" />
+                <label class="radio-label" for="cat3-q2-c2">No, I urgently needed the money and there was no room to
+                  address this issue.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c3" value="3" />
+                <label class="radio-label" for="cat3-q2-c3">To some extent. We discussed our vision and mission with
+                  our shortlisted investors and made sure to sign only with
+                  those who broadly share it.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c4" value="5" />
+                <label class="radio-label" for="cat3-q2-c4">Yes, we carefully chose the legal structure of our impact
+                  enterprise, incorporated legal standards that allow preserving
+                  the mission (to the extent possible) and set up a well-balanced board of directors.</label>
+                <input type="radio" name="cat3-q2" class="cat-c" id="cat3-q2-c5" value="2" />
+                <label class="radio-label" for="cat3-q2-c5">I was aware of the topic but we didn't take
+                  precautions.</label>
+              </div>
+            </div>
+            <div class="question c3-2 d-none">
+              <h3>
+                3. Do you have a strategy how to deal with market changes that
+                may challenge your business and mission?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c1" value="4" />
+                <label class="radio-label" for="cat3-q3-c1">We have defined some guidelines that differentiate between
+                  changes that directly affect our impact and business model
+                  and other types of challenges that are less critical to our mission.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c2" value="1" />
+                <label class="radio-label" for="cat3-q3-c2">No, I will decide once such a situation arises.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c3" value="5" />
+                <label class="radio-label" for="cat3-q3-c3">Yes, we are 100% clear about how to deal with different
+                  market changes that may require us to pivot and risk taking us
+                  away from our mission.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c4" value="3" />
+                <label class="radio-label" for="cat3-q3-c4">We have thought about possible scenarios in our team and
+                  defined our common priorities.</label>
+                <input type="radio" name="cat3-q3" class="cat-c" id="cat3-q3-c5" value="2" />
+                <label class="radio-label" for="cat3-q3-c5">I am fully aware that this might happen, but will always
+                  make sure that the mission prevails.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat4 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Subsequent Financing</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c4-0 d-none" id="c4-q0">
+              <h3>
+                1. Are you sufficiently aware of your future financing needs
+                to implement your growth and scaling plan?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c1" value="2" />
+                <label class="radio-label" for="cat4-q1-c1">Vaguely, but our scaling path is volatile and not clear
+                  enough yet.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c2" value="5" />
+                <label class="radio-label" for="cat4-q1-c2">We have full transparency on our financing needs and already
+                  discussed potential pathways with our existing investors.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c3" value="3" />
+                <label class="radio-label" for="cat4-q1-c3">Somewhat. We started to calculate different scenarios and
+                  the resulting financing needs.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c4" value="1" />
+                <label class="radio-label" for="cat4-q1-c4">No, I'm sure the latest financing will support us for at
+                  least another 3-6 years.</label>
+                <input type="radio" name="cat4-q1" class="cat-c" id="cat4-q1-c5" value="4" />
+                <label class="radio-label" for="cat4-q1-c5">Mostly. We know the amounts of financing required in various
+                  scenarios and plan to address the issue in a timely manner
+                  by discussing our options within our team.</label>
+              </div>
+            </div>
+            <div class="question c4-1 d-none">
+              <h3>
+                2. Do you know if your current investors have the capacity and
+                willingsness to continue funding your enterprise?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c1" value="5" />
+                <label class="radio-label" for="cat4-q2-c1">Completely. We know about those who are ready to join the
+                  next round and we will start early enough to approach them as
+                  well as secure new investors so as not to run out of cash.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c2" value="1" />
+                <label class="radio-label" for="cat4-q2-c2">No, I have no idea.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c3" value="2" />
+                <label class="radio-label" for="cat4-q2-c3">Somewhat. One or two of them dropped some remarks when we
+                  spoke a while ago.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c4" value="4" />
+                <label class="radio-label" for="cat4-q2-c4">There is sufficient capacity to support us, but it's still
+                  early and therefore unclear if all of them will finally
+                  commit to investing again.</label>
+                <input type="radio" name="cat4-q2" class="cat-c" id="cat4-q2-c5" value="3" />
+                <label class="radio-label" for="cat4-q2-c5">We discussed this issue with some investors in the course of
+                  updating them on the enterprise's progress.</label>
+              </div>
+            </div>
+            <div class="question c4-2 d-none" id="c4-q2">
+              <h3>
+                3. How do you (intend to) approach your investors and secure
+                their continued support?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c1" value="4" />
+                <label class="radio-label" for="cat4-q3-c1">We sat down with our team to identify the features that we
+                  need from investors for our next scaling step. As a
+                  consequence, we will make an early and targeted approach to each investor and are prepared that some
+                  may not be the
+                  right ones to follow us in the next round.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c2" value="3" />
+                <label class="radio-label" for="cat4-q3-c2">We started to discuss our scaling options with some of our
+                  key investors to create traction and receive early signals of
+                  financial support.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c3" value="1" />
+                <label class="radio-label" for="cat4-q3-c3">We will approach them once the money runs out.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c4" value="5" />
+                <label class="radio-label" for="cat4-q3-c4">We actively communicate with our existing investors about
+                  this, especially with those that would be a great fit in the
+                  future. We are very realistic about the time and risks associated with fundraising and also started to
+                  build new
+                  relations with investors that could provide a crucial value add to our next phase of scaling and
+                  growth.</label>
+                <input type="radio" name="cat4-q3" class="cat-c" id="cat4-q3-c5" value="2" />
+                <label class="radio-label" for="cat4-q3-c5">Our enterprise is on track and performing well, so I'm sure
+                  they will quickly commit again.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item disabled">
+          <div class="cat5 accordion-header">
+            <span class="accordion-icon"></span>
+            <h2 class="cat-h">Exit Strategy</h2>
+          </div>
+          <div class="accordion-content">
+            <div class="question c5-0 d-none">
+              <h3>
+                1. To which extent have you discussed different exit
+                strategies and preferences with your investors?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c1" value="1" />
+                <label class="radio-label" for="cat5-q1-c1">Not at all.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c2" value="3" />
+                <label class="radio-label" for="cat5-q1-c2">We have discussed exit strategies with some key investor(s)
+                  before the investment.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c3" value="4" />
+                <label class="radio-label" for="cat5-q1-c3">We have co-developed an exit plan with our key investor(s)
+                  and defined common growth and scaling goals.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c4" value="5" />
+                <label class="radio-label" for="cat5-q1-c4">We're fully synchronized with all of our investors regarding
+                  our preferred exit plan and our enterprise is on track to
+                  fulfil the relevant milestones.</label>
+                <input type="radio" name="cat5-q1" class="cat-c" id="cat5-q1-c5" value="2" />
+                <label class="radio-label" for="cat5-q1-c5">This is not relevant, since we only received loans, grants
+                  and/or self-liquidating financing instruments.</label>
+              </div>
+            </div>
+            <div class="question c5-1 d-none" id="c5-q1">
+              <h3>
+                2. ) Did you think about the effects on your enterprise's
+                impact if some or the entire group of owners/shareholders were
+                to sell their shares?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c1" value="2" />
+                <label class="radio-label" for="cat5-q2-c1">We will discuss this if and when the situation comes up.
+                </label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c2" value="3" />
+                <label class="radio-label" for="cat5-q2-c2">We already discussed this issue among the
+                  owners/shareholders.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c3" value="5" />
+                <label class="radio-label" for="cat5-q2-c3">Yes, we sought external (legal) advice and already decided
+                  on legal clauses to deal with such situations to ensure the
+                  best possible mission preservation.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c4" value="4" />
+                <label class="radio-label" for="cat5-q2-c4">We're aware of this possibility and currently decide on
+                  appropriate measures to ensure mission alignment even beyond
+                  some shareholders leaving.</label>
+                <input type="radio" name="cat5-q2" class="cat-c" id="cat5-q2-c5" value="1" />
+                <label class="radio-label" for="cat5-q2-c5">No, I don't expect this to happen at all.</label>
+              </div>
+            </div>
+            <div class="question c5-2 d-none">
+              <h3>
+                3. If applicable: Do you know about the options you have to
+                ensure a responsible exit?
+              </h3>
+              <div class="choices">
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c1" value="1" />
+                <label class="radio-label" for="cat5-q3-c1">No, what is this?.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c2" value="2" />
+                <label class="radio-label" for="cat5-q3-c2">No, but I'm in the process of getting information.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c3" value="5" />
+                <label class="radio-label" for="cat5-q3-c3">Yes, absolutely. We're already in discussions with a
+                  responsible buyer and will include further clauses in the
+                  agreements if negotiations are successful.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c4" value="3" />
+                <label class="radio-label" for="cat5-q3-c4">We are aware that this is an issue because it is likely that
+                  our enterprise will need a strong strategic buyer or
+                  partner to be able to scale massively and reach a vast number of clients and beneficiaries.</label>
+                <input type="radio" name="cat5-q3" class="cat-c" id="cat5-q3-c5" value="4" />
+                <label class="radio-label" for="cat5-q3-c5">Yes, we have defined preferences for such an exit and will
+                  pursue it when our enterprise is ready for it.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="scroll"></div> -->
+      <button type="button" class="submit disabled" id="submit">
+        Submit
+      </button>
+    </div>
+    <div id="download-btn">
+      <button id="reset" style="display: none">Reset Form</button>
+      <button id="download" style="display: none">Download</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js" defer></script>
+  <!-- html-to-pdfmake file: -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js" defer></script>
+</body>
+
+</html>
