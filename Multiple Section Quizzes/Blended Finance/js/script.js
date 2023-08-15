@@ -15,6 +15,7 @@ const result = {
 };
 
 const resultArray = [];
+const barResultArr = [];
 
 accordionHeaders.forEach((header) => {
 	header.addEventListener("click", () => {
@@ -148,10 +149,20 @@ const barChartOptions = {
 		bar: {
 			borderRadius: 4,
 			horizontal: true,
+			dataLabels: {
+				position: "bottom",
+			},
 		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
+		textAnchor: "start",
+		style: {
+			colors: ["#fff"],
+		},
+		formatter: function (val, opt) {
+			return val.toFixed(2) + "%";
+		},
 	},
 	toolbar: { show: false },
 	fill: {
@@ -171,7 +182,7 @@ const barChartOptions = {
 			"Blended Finance in Practice",
 		],
 		min: 0,
-		max: 15,
+		max: 100,
 	},
 	yaxis: {
 		labels: {
@@ -252,10 +263,20 @@ const barAltChartOptions = {
 		bar: {
 			borderRadius: 4,
 			horizontal: true,
+			dataLabels: {
+				position: "bottom",
+			},
 		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
+		textAnchor: "start",
+		style: {
+			colors: ["#fff"],
+		},
+		formatter: function (val, opt) {
+			return val.toFixed(2) + "%";
+		},
 	},
 	toolbar: { show: false },
 	fill: {
@@ -275,7 +296,7 @@ const barAltChartOptions = {
 			"Blended Finance in Practice",
 		],
 		min: 0,
-		max: 15,
+		max: 100,
 	},
 	yaxis: {
 		labels: {
@@ -306,10 +327,29 @@ document.getElementById("submit").addEventListener("click", (e) => {
 	for (let prop in values) {
 		if (values.hasOwnProperty(prop) && Array.isArray(values[prop])) {
 			const sum = values[prop].reduce((partialSum, a) => partialSum + a, 0);
+			let percentage = 0;
+			if (prop === "c1") {
+				percentage = (sum / 15) * 100;
+			}
+			if (prop === "c2") {
+				percentage = (sum / 15) * 100;
+			}
+			if (prop === "c3") {
+				percentage = (sum / 10) * 100;
+			}
+			if (prop === "c4") {
+				percentage = (sum / 10) * 100;
+			}
+			if (prop === "c5") {
+				percentage = (sum / 10) * 100;
+			}
 			result[prop] = sum;
 			resultArray.push(sum);
+			barResultArr.push(percentage);
 		}
 	}
+
+	console.log(barResultArr, values, resultArray, result);
 
 	e.target.classList.add("d-none");
 	document.querySelector(".accordion").classList.add("d-none");
@@ -336,9 +376,9 @@ document.getElementById("submit").addEventListener("click", (e) => {
 	Chart.defaults.color = "white";
 	Promise.all([
 		radarChart.updateSeries([{ name: "Score", data: resultArray }]),
-		barChart.updateSeries([{ name: "Score", data: resultArray }]),
+		barChart.updateSeries([{ name: "Score", data: barResultArr }]),
 		radarAltChart.updateSeries([{ name: "Score", data: resultArray }]),
-		barAltChart.updateSeries([{ name: "Score", data: resultArray }]),
+		barAltChart.updateSeries([{ name: "Score", data: barResultArr }]),
 	]).then(() => {
 		document.getElementById("download").style.display = "inline-block";
 		document.getElementById("reset").style.display = "inline-block";
@@ -539,4 +579,5 @@ document.getElementById("reset").addEventListener("click", function resetForm() 
 	});
 
 	resultArray.length = 0;
+	barResultArr.length = 0;
 });

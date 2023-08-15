@@ -15,6 +15,7 @@ const result = {
 };
 
 const resultArray = [];
+const barResultArr = [];
 
 accordionHeaders.forEach((header) => {
 	header.addEventListener("click", () => {
@@ -142,10 +143,27 @@ const barChartOptions = {
 		bar: {
 			borderRadius: 4,
 			horizontal: true,
+			dataLabels: {
+				position: "bottom",
+			},
 		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
+		textAnchor: "start",
+		style: {
+			colors: ["#fff"],
+		},
+		formatter: function (val, opt) {
+			return val.toFixed(2) + "%";
+		},
+	},
+	tooltip: {
+		y: {
+			formatter: (val, opts) => {
+				return `${val.toFixed(2)}%`;
+			},
+		},
 	},
 	toolbar: { show: false },
 	fill: {
@@ -159,7 +177,7 @@ const barChartOptions = {
 		},
 		categories: ["The Social Problem", "The Solution", "The Distribution", "Growth & Scaling", "Financing & Forecasts"],
 		min: 0,
-		max: 20,
+		max: 100,
 	},
 	yaxis: {
 		labels: {
@@ -234,10 +252,27 @@ const barAltChartOptions = {
 		bar: {
 			borderRadius: 4,
 			horizontal: true,
+			dataLabels: {
+				position: "bottom",
+			},
 		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
+		textAnchor: "start",
+		style: {
+			colors: ["#fff"],
+		},
+		formatter: function (val, opt) {
+			return val.toFixed(2) + "%";
+		},
+	},
+	tooltip: {
+		y: {
+			formatter: (val, opts) => {
+				return `${val.toFixed(2)}%`;
+			},
+		},
 	},
 	toolbar: { show: false },
 	fill: {
@@ -251,7 +286,7 @@ const barAltChartOptions = {
 		},
 		categories: ["The Social Problem", "The Solution", "The Distribution", "Growth & Scaling", "Financing & Forecasts"],
 		min: 0,
-		max: 20,
+		max: 100,
 	},
 	yaxis: {
 		labels: {
@@ -282,8 +317,15 @@ document.getElementById("submit").addEventListener("click", (e) => {
 	for (let prop in values) {
 		if (values.hasOwnProperty(prop) && Array.isArray(values[prop])) {
 			const sum = values[prop].reduce((partialSum, a) => partialSum + a, 0);
+			let percentage = 0;
+			if (prop === "c2") {
+				percentage = (sum / 20) * 100;
+			} else {
+				percentage = (sum / 15) * 100;
+			}
 			result[prop] = sum;
 			resultArray.push(sum);
+			barResultArr.push(percentage);
 		}
 	}
 
@@ -312,9 +354,9 @@ document.getElementById("submit").addEventListener("click", (e) => {
 	Chart.defaults.color = "white";
 	Promise.all([
 		radarChart.updateSeries([{ name: "Score", data: resultArray }]),
-		barChart.updateSeries([{ name: "Score", data: resultArray }]),
+		barChart.updateSeries([{ name: "Score", data: barResultArr }]),
 		radarAltChart.updateSeries([{ name: "Score", data: resultArray }]),
-		barAltChart.updateSeries([{ name: "Score", data: resultArray }]),
+		barAltChart.updateSeries([{ name: "Score", data: barResultArr }]),
 	]).then(() => {
 		document.getElementById("download").style.display = "inline-block";
 		document.getElementById("reset").style.display = "inline-block";
@@ -514,4 +556,5 @@ document.getElementById("reset").addEventListener("click", function resetForm() 
 	});
 
 	resultArray.length = 0;
+	barResultArr.length = 0;
 });

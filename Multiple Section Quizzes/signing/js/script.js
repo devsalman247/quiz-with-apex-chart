@@ -15,6 +15,7 @@ const result = {
 };
 
 const resultArray = [];
+const barResultArr = [];
 
 accordionHeaders.forEach((header) => {
 	header.addEventListener("click", () => {
@@ -150,10 +151,20 @@ const barChartOptions = {
 		bar: {
 			borderRadius: 4,
 			horizontal: true,
+			dataLabels: {
+				position: "bottom",
+			},
 		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
+		textAnchor: "start",
+		style: {
+			colors: ["#fff"],
+		},
+		formatter: function (val, opt) {
+			return val.toFixed(2) + "%";
+		},
 	},
 	toolbar: { show: false },
 	fill: {
@@ -173,7 +184,7 @@ const barChartOptions = {
 			"Negotiation",
 		],
 		min: 0,
-		max: 20,
+		max: 100,
 	},
 	yaxis: {
 		labels: {
@@ -254,10 +265,20 @@ const barAltChartOptions = {
 		bar: {
 			borderRadius: 4,
 			horizontal: true,
+			dataLabels: {
+				position: "bottom",
+			},
 		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
+		textAnchor: "start",
+		style: {
+			colors: ["#fff"],
+		},
+		formatter: function (val, opt) {
+			return val.toFixed(2) + "%";
+		},
 	},
 	toolbar: { show: false },
 	fill: {
@@ -277,7 +298,7 @@ const barAltChartOptions = {
 			"Negotiation",
 		],
 		min: 0,
-		max: 20,
+		max: 100,
 	},
 	yaxis: {
 		labels: {
@@ -308,8 +329,15 @@ document.getElementById("submit").addEventListener("click", (e) => {
 	for (let prop in values) {
 		if (values.hasOwnProperty(prop) && Array.isArray(values[prop])) {
 			const sum = values[prop].reduce((partialSum, a) => partialSum + a, 0);
+			let percentage = 0;
+			if (prop === "c2") {
+				percentage = (sum / 20) * 100;
+			} else {
+				percentage = (sum / 15) * 100;
+			}
 			result[prop] = sum;
 			resultArray.push(sum);
+			barResultArr.push(percentage);
 		}
 	}
 
@@ -338,9 +366,9 @@ document.getElementById("submit").addEventListener("click", (e) => {
 	Chart.defaults.color = "white";
 	Promise.all([
 		radarChart.updateSeries([{ name: "Score", data: resultArray }]),
-		barChart.updateSeries([{ name: "Score", data: resultArray }]),
+		barChart.updateSeries([{ name: "Score", data: barResultArr }]),
 		radarAltChart.updateSeries([{ name: "Score", data: resultArray }]),
-		barAltChart.updateSeries([{ name: "Score", data: resultArray }]),
+		barAltChart.updateSeries([{ name: "Score", data: barResultArr }]),
 	]).then(() => {
 		document.getElementById("download").style.display = "inline-block";
 		document.getElementById("reset").style.display = "inline-block";
@@ -378,22 +406,14 @@ document.getElementById("download").addEventListener("click", function downloadP
 		header.innerHTML = `
     	<div id="header-pdf">
     		<h3>
-        		INVESTMENT READINESS ROADMAP
+        		SIGNING READINESS ROADMAP
     		</h3>
-    		<p>
-        		Test and improve your capacity to attract and use investment to scale your impact.
-    		</p>
+    		
     	</div>`;
 
 		const details = document.createElement("div");
 		details.innerHTML = `
     	<div id="details-pdf">
-    		<p>
-        		Welcome to the Investment Readiness Roadmap! It is a systematic toolkit to support impact entrepreneurs on their journeys towards investment readiness and to strengthen their ability to raise capital from investors. The IR Roadmap is introduced in the context of the "B-Briddhi – Scaling Impact Enterprises of Bangladesh" program:
-    		</p>
-    		<p>
-        		It is designed as a practice-driven framework and consists of a series of targeted questions in 5 key categories. These questions will allow you to reflect on where you currently are within your investment readiness journey. Based on your answers, you will see a spiderweb graph highlighting your strengths, gaps and areas for improvement. Don’t assume you’ll need a perfect score in all categories to be able to attract investors. Rather consider it as a continuous opportunity for learning.
-    		</p>
     	</div>`;
 		details.style.pageBreakAfter = "always";
 
@@ -544,4 +564,5 @@ document.getElementById("reset").addEventListener("click", function resetForm() 
 	});
 
 	resultArray.length = 0;
+	barResultArr.length = 0;
 });
